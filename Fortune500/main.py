@@ -35,7 +35,7 @@ print(percentage_difference)
 if percentage_difference > 5:
     print("Get news")
 else:
-    print("Tudo e tranquilo")
+    print("Tudo e tranquilo e vc vai dominar Python")
 
 
     ## STEP 2: https://newsapi.org/ 
