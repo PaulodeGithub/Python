@@ -13,13 +13,13 @@ def fill_contribution_chart(start_date, end_date):
         }
         
         # Create an empty commit
-        subprocess.call('git commit --allow-empty -m "Auto-commit" --quiet', env=env, shell=True)
+        subprocess.call('path/to/git commit --allow-empty -m "Auto-commit" --quiet', env=env, shell=True)
 
 # Usage example
 import datetime
 
 # Set the desired start and end dates
-start_date = datetime.date(2023, 2, 3)
+start_date = datetime.date(2023, 2, 5)
 end_date = datetime.date(2023, 6, 25)
 
 # Fill the contribution chart
