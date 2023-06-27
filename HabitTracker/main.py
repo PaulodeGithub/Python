@@ -1,4 +1,5 @@
 import requests
+from datetime import datetime
 
 TOKEN = "jfnrjgbgjsmdkigm"
 USERNAME = "pauly-gallagher"
@@ -35,12 +36,17 @@ headers= {
 # response.raise_for_status()
 # print(response)
 
+
+today = datetime.now()
+print(today.strftime("%Y%m%d"))
+
+
 Post_Pixal = f"{Graph_Endpooint}/{ID}"
 
 pixal_params = {
-    "date" : "20230627",
+    "date" : today.strftime("%Y%m%d"),
     "quantity" : "45",
 }
 
-response = requests.post(url=Post_Pixal, json=pixal_params, headers=headers)
-print(response.text)
+# response = requests.post(url=Post_Pixal, json=pixal_params, headers=headers)
+# print(response.text)
