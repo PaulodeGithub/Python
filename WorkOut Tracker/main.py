@@ -28,7 +28,7 @@ exercise_params = {
 headers = {
     "x-app-id" : APP_ID,
     "x-app-key" : API_KEY,
-    "Content-Type": "application/json",
+    "Content-Type": "application/json"
     
 }
 
@@ -47,7 +47,7 @@ print(result)
 sheety_post_endpoint = os.environ["SHEET_ENDPOINT"]
 
 bearer_token = {
-    "Authorization": f"Bearer {os.enviropn['TOKEN']}"
+    "Authorization": f"Bearer {os.environ['TOKEN']}"
 }
 
 
