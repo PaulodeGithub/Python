@@ -20,7 +20,7 @@ import datetime
 
 # Set the desired start and end dates
 start_date = datetime.date(2023, 2, 5)
-end_date = datetime.date(2023, 6, 25)
+end_date = datetime.date(2023, 7, 3)
 
 # Fill the contribution chart
 fill_contribution_chart(start_date, end_date)
