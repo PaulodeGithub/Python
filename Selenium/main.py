@@ -22,7 +22,8 @@ driver.get("https://en.wikipedia.org/wiki/Brazil")
 title_element = driver.find_element(By.XPATH, "//head/title")
 print(title_element.get_attribute("textContent"))
 
-# Quit the WebDriver
+# Quit the WebDriver 
+# adding a test to git
 driver.quit()
 
 
