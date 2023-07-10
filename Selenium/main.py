@@ -16,11 +16,11 @@ chrome_options.headless = True
 driver = webdriver.Chrome(service=selenium_service, options=chrome_options)
 
 # Open the desired URL
-driver.get("https://en.wikipedia.org/wiki/Brazil")
+driver.get("https://www.italki.com/?gclid=CjwKCAjw2K6lBhBXEiwA5RjtCVtyTCyZKJlR3263ZJyO-rpJenhPqanLNO-v3hpaLGRNOuVjzho5fhoC-N0QAvD_BwE&utm_campaign=pmax_rmt_en_nofpnopinterest_ESW_UK&utm_content=bau_2022&utm_medium=pmax&utm_source=google_ads&utm_term=")
 
 # Find the <title> element and print its text
-title_element = driver.find_element(By.XPATH, "//head/title")
-print(title_element.get_attribute("textContent"))
+title_element = driver.find_element(By.XPATH, '//*[@id="__next"]/div[1]/footer/div[4]/div/div[2]/div[2]/a[7]')
+print(title_element.get_attribute("style"))
 
 # Quit the WebDriver 
 # adding a test to git
