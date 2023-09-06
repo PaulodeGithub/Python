@@ -1,10 +1,15 @@
 from flask import Flask
+from fucntions import make_bold
 
 app = Flask(__name__)
 
 @app.route("/")
+@make_bold
 def hello_world():
     return "<p>Hello, World!</p>"
+
+emp_text = hello_world
+print(emp_text)
 
 @app.route("/fearless")
 def be_fearless():
