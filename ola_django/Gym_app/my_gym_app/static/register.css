@@ -1,0 +1,73 @@
+/* Apply styles to the entire page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    text-align: center;
+}
+
+/* Header styles */
+header {
+    background-color: black;
+    color: #fff;
+    padding: 20px;
+}
+
+/* H1 styles */
+h1 {
+    font-size: 36px;
+    
+}
+
+/* Form container styles */
+form {
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 70px;
+    background-color: #3498db;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-container {
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 10px
+}
+
+/* Label and input field styles */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-left: 10px
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    max-width: 380px; 
+    margin-bottom: 20px;
+    margin: 0 auto 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Register button styles */
+input[type="submit"] {
+    background-color: green;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}

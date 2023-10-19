@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Gym App</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+    {% comment %}  css refed in through statioc files{% endcomment %}
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Gym App</h1>
+        <p>Your ultimate fitness companion</p>
+    </header>
+    
+    <main>
+        <h2>Get Started Today!</h2>
+        <p>Transform your fitness journey with My Gym App. Sign up now and unlock a healthier you.</p>
+        <a href="register/" class="register-button">Sign up now</a>
+    </main>
+</body>
+</html>

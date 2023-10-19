@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px;
+}
+h1 {
+    font-size: 36px;
+}
+p {
+    font-size: 18px;
+}
+.register-button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 24px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.download-button:hover {
+    background-color: #2980b9;
+}
