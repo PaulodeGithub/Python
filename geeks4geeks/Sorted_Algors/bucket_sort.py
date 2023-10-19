@@ -1,22 +1,21 @@
-def buckerSort(x):
-    arr = []
-    slot_num = 10
-    for i in range(slot_num):
-        arr.append([])
-        print(arr)
 
-    for j in x:
-        index_arr = int(slot_num * j)
-        arr[index_arr].append(j)
+def bucket_sort(arr):
+    bucket = []
+    buckets = [[] for _ in range(len(arr))]
+    
+    
+    
+    for k in range(len(bucket)):
+        bucket[k] = sorted(bucket[k])
+    
+    merge_index = 0
+    for i in range(len(arr)):
+        for j in range(len(arr)):
+            bucket[merge_index] = arr[i][j]
+            merge_index += 1
 
-    for i in range(slot_num):
-        arr[i] = insert_sort(arr[i])
+    return arr
 
-    k = 0
-    for i in range(slot_num):
-        for j in range(len(arr[i])):
-            x[k] = arr[i][j]
-            k +=1
-
-    return x
-
+test_arr= [2,34,789,54,3,7,34567,23,128766]
+bucket_sort(test_arr)
+print(test_arr)
