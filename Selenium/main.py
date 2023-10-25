@@ -1,29 +1,62 @@
-from selenium.webdriver.common.by import By
+# type: ignore
+# Selenium - Automatizando tarefas no navegador
+from pathlib import Path
+from time import sleep
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 
-# Path to your ChromeDriver executable
-chrome_driver_path = "C:\Development\chromedriver.exe"
+# Chrome Options
+# https://peter.sh/experiments/chromium-command-line-switches/
+# Doc Selenium
+# https://selenium-python.readthedocs.io/locating-elements.html
 
-# Set the ChromeDriver path and version
-selenium_service = Service(chrome_driver_path, chrome_version=114)
 
-# Create ChromeOptions and specify headless mode if desired
-chrome_options = webdriver.ChromeOptions()
-chrome_options.headless = True
+# Caminho para a raiz do projeto
+ROOT_FOLDER = Path(__file__).parent
+# Caminho para a pasta onde o chromedriver está
+CHROME_DRIVER_PATH = ROOT_FOLDER / 'drivers' / 'chromedriver'
 
-# Create the WebDriver instance
-driver = webdriver.Chrome(service=selenium_service, options=chrome_options)
 
-# Open the desired URL
-driver.get("https://www.italki.com/?gclid=CjwKCAjw2K6lBhBXEiwA5RjtCVtyTCyZKJlR3263ZJyO-rpJenhPqanLNO-v3hpaLGRNOuVjzho5fhoC-N0QAvD_BwE&utm_campaign=pmax_rmt_en_nofpnopinterest_ESW_UK&utm_content=bau_2022&utm_medium=pmax&utm_source=google_ads&utm_term=")
+def make_chrome_browser(*options: str) -> webdriver.Chrome:
+    chrome_options = webdriver.ChromeOptions()
 
-# Find the <title> element and print its text
-title_element = driver.find_element(By.XPATH, '//*[@id="__next"]/div[1]/footer/div[4]/div/div[2]/div[2]/a[7]')
-print(title_element.get_attribute("style"))
+    # chrome_options.add_argument('--headless')
+    if options is not None:
+        for option in options:
+            chrome_options.add_argument(option)
 
-# Quit the WebDriver 
-# adding a test to git
-driver.quit()
+    chrome_service = Service(
+        executable_path=str(CHROME_DRIVER_PATH),
+    )
 
+    browser = webdriver.Chrome(
+        service=chrome_service,
+        options=chrome_options
+    )
+
+    return browser
+
+
+if __name__ == '__main__':
+    TIME_TO_WAIT = 10
+
+    # Example
+    # options = '--headless', '--disable-gpu',
+    options = ()
+    browser = make_chrome_browser(*options)
+
+    # Como antes
+    browser.get('https://www.google.com')
+
+    # wait for input
+    search_input = WebDriverWait(browser, TIME_TO_WAIT).until
+    (EC.presence_of_element_located((By.NAME, 'q')))
+    search_input.send_keys('Hello World!')
+
+    # Dorme por 10 segundos
+    sleep(TIME_TO_WAIT)
 
